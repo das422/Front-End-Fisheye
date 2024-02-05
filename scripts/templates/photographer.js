@@ -1,9 +1,17 @@
 function photographerTemplate(data) {
-  const { name, portrait, city, country, tagline, price } = data;
 
+  const display=getUserCardDOM(data);
+  
+  return display;
+}
+
+
+
+
+function getUserCardDOM(data) {
+  const { name, portrait, city, country, tagline, price } = data;
   const picture = `assets/photographers/${portrait}`;
 
-  function getUserCardDOM() {
     const article = document.createElement("article");
     const img = document.createElement("img");
     img.setAttribute("src", picture);
@@ -17,7 +25,7 @@ function photographerTemplate(data) {
     article.appendChild(div);
 
     const h3 = document.createElement("h3");
-    h3.textContent = city + "," +" "+ country;
+    h3.textContent = city + "," + " " + country;
     div.appendChild(h3);
 
     const p = document.createElement("p");
@@ -26,11 +34,9 @@ function photographerTemplate(data) {
 
     const span = document.createElement("span");
     div.appendChild(span);
-    span.textContent = price+"€" + "/" + "jour";
+    span.textContent = price + "€" + "/" + "jour";
 
     // div.appendChild(p);
 
     return article;
   }
-  return { name, picture, getUserCardDOM };
-}
