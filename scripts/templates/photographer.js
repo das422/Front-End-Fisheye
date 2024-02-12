@@ -1,42 +1,49 @@
 function photographerTemplate(data) {
+  const display = getUserCardDOM(data);
 
-  const display=getUserCardDOM(data);
-  
   return display;
 }
 
-
-
-
 function getUserCardDOM(data) {
-  const { name, portrait, city, country, tagline, price } = data;
+  const { name, portrait, city, country, tagline, price, id } = data;
   const picture = `assets/photographers/${portrait}`;
 
-    const article = document.createElement("article");
-    const img = document.createElement("img");
-    img.setAttribute("src", picture);
+  const article = document.createElement("article");
 
-    const h2 = document.createElement("h2");
-    h2.textContent = name;
-    article.appendChild(img);
-    article.appendChild(h2);
+  // h2.textContent = name;
+  let aTag = document.createElement("a");
+  const img = document.createElement("img");
+  img.setAttribute("src", picture);
+  img.setAttribute("id", "photographers");
+  aTag.textContent = name;
+  const h2 = document.createElement("h2");
 
-    const div = document.createElement("div");
-    article.appendChild(div);
+  article.appendChild(aTag);
+  aTag.appendChild(img);
 
-    const h3 = document.createElement("h3");
-    h3.textContent = city + "," + " " + country;
-    div.appendChild(h3);
+  aTag.href = `${id}`;
 
-    const p = document.createElement("p");
-    div.appendChild(p);
-    p.textContent = tagline;
+  // article.appendChild(img);
+  // article.appendChild(h2);
+  h2.setAttribute("class", `${name}`);
+  h2.setAttribute("id", `${id}`);
 
-    const span = document.createElement("span");
-    div.appendChild(span);
-    span.textContent = price + "€" + "/" + "jour";
+  const div = document.createElement("div");
+  // const div = document.createElement("div");
+  article.appendChild(div);
+  const h3 = document.createElement("h3");
+  h3.textContent = city + "," + " " + country;
+  div.appendChild(h3);
 
-    // div.appendChild(p);
+  const p = document.createElement("p");
+  div.appendChild(p);
+  p.textContent = tagline;
 
-    return article;
-  }
+  const span = document.createElement("span");
+  div.appendChild(span);
+  span.textContent = price + "€" + "/" + "jour";
+
+  div.appendChild(p);
+
+  return article;
+}

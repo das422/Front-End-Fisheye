@@ -5,7 +5,12 @@ body {
     margin: 0;
     padding: 0;
 }
+main{
+    margin-inline: 7rem;
+    /* max-width: 1440px; */
+    margin: 0 auto;
 
+}
 
 header {
     display: flex;
@@ -13,12 +18,14 @@ header {
     justify-content: space-between;
     align-items: center;
     height: 90px;
+    
 }
 
 h1 {
     color: #901C1C;
     margin-right: 100px;
 }
+
 
 .logo {
     height: 50px;
@@ -27,15 +34,22 @@ h1 {
 
 .photographer_section {
     display: grid;
-    grid-template-columns:1fr 1fr 1fr;
-    gap: 70px;
+    grid-template-columns:repeat(3, 1fr);
+    column-gap: 10rem;
+    row-gap: 5rem;
     margin-top: 100px;
+    align-content:center;
+    margin-inline: 7rem;
+    
+    
+    
+
     /* max-width: max-content; */
 }
 
 .photographer_section article {
 
-    border: 2px solid lime;
+    /* border: 2px solid lime; */
     justify-self: center;
     display: flex;
     justify-content: center;
@@ -46,14 +60,19 @@ h1 {
 
 }
 
-.photographer_section article h2 {
+.photographer_section article a {
     color: #D3573C;
     font-size:32px;
-
+    display: flex;
+    flex-direction: column-reverse;
+    text-decoration: none;
+    align-items: center;
+    gap: 0.8rem;
     padding: 0;
-    margin: 1rem;
-    margin-inline: 0;
+    margin: 0.8rem;
+    /* margin-inline: 0; */
     text-align: center;
+    cursor: pointer;
 }
 
 .photographer_section article div{
@@ -75,14 +94,24 @@ color: #525252;
     
     padding: 0;
    margin: 0;
+
 }
 
 .photographer_section article img {
     height: 200px;
     width: 200px;
     border-radius: 50%;
+    /* transform: scale(0.8);
+     */
+     translate: 2px 5px;
+    object-fit: cover;
+    object-position: center;
     /* object-fit: contain; */
     /* object-fit: cover; */
     /* object-position: center; */
+    cursor: pointer;
+}
+
+.photographer_section article img:hover{
 
 }
