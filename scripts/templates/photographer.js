@@ -21,7 +21,7 @@ function getUserCardDOM(data) {
   article.appendChild(aTag);
   aTag.appendChild(img);
 
-  aTag.href = `${id}`;
+  aTag.href = `/photographer.html?id=${id}`;
 
   // article.appendChild(img);
   // article.appendChild(h2);
