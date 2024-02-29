@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Archivo } from "next/font/google";
 import "./globals.css";
-import { SessionProvider } from "next-auth/react";
+import Navbar from "./components/header/Navbar/Navbar";
 
-const inter = Inter({ subsets: ["latin"] });
+
+const archivo = Archivo({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,9 +17,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    
     <html lang="en">
-      
-      <body className={inter.className}>{children}</body>
+      <body className={archivo.className}>
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
