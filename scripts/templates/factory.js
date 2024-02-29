@@ -1,6 +1,6 @@
 
 
-export default class Photographer {
+ class Photographer {
     constructor(id, name, media) {
         this.id = id;
         this.name = name;
@@ -12,7 +12,7 @@ export default class Photographer {
         console.log(`Media: ${this.media}`);
     }
 }
-
+export const photographerFactory = new Photographer();
 class MediaFactory {
     constructor() {
         this.photographers = [];

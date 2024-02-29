@@ -1,30 +1,55 @@
+
+
+
+
+
+
 let params = new URL(document.location).searchParams;
 console.log(params);
 
 const Data = params.get("id");
 console.log(Data);
 
-async function getDatabyId(id) {
+// async function getDatabyId(id) {
+//   const data = await fetch("./data/photographers.json");
+//   const { media, photographers } = await data.json();
+//   const newPhotographer = photographers.find(
+//     (photographer) => photographer.id == id
+//   );
+
+//   const mediaPhotographer = media.filter((media) => media.photographerId == id);
+//   return { newPhotographer, mediaPhotographer };
+// }
+
+async function getPhotographersbyId(id) {
   const data = await fetch("./data/photographers.json");
-  const { media, photographers } = await data.json();
-  const newPhotographer = photographers.find(
+  const { photographers } = await data.json();
+  const photographerId = photographers.find(
     (photographer) => photographer.id == id
   );
-
-  const mediaPhotographer = media.filter((media) => media.photographerId == id);
-  return { newPhotographer, mediaPhotographer };
+  return photographerId;
 }
 
-getDatabyId(Data);
+async function getMediabyId(id) {
+  const data = await fetch("./data/photographers.json");
+  const { media } = await data.json();
+  const mediaPhotographer = media.filter(
+    (media) => media.photographerId == id
+  );
+  return  mediaPhotographer ;
+}
+
+// getDatabyId(Data);
 
 async function displayData() {
-  const { newPhotographer, mediaPhotographer } = await getDatabyId(Data);
-
-  
+  const  mediaPhotographer = await getMediabyId(Data);
+  const photographerId = await getPhotographersbyId(Data);
+  console.log(photographerId);
+  console.log(mediaPhotographer);
   const article = document.createElement("article");
- 
+  article.classList.add("photographer-article");
 
-  const h2 = document.createElement("h2");
+
   const aTag = document.createElement("a");
   const img = document.createElement("img");
   const div = document.createElement("div");
@@ -33,13 +58,14 @@ async function displayData() {
   const span = document.createElement("span");
   const ul = document.createElement("ul");
 
-  aTag.textContent = newPhotographer.name;
-  img.setAttribute("src", `assets/photographers/${newPhotographer.portrait}`);
-  img.setAttribute("id", "photographers");
-  aTag.href = `/photographer.html?id=${newPhotographer.id}`;
-  h3.textContent = newPhotographer.city + "," + " " + newPhotographer.country;
-  p.textContent = newPhotographer.tagline;
-  span.textContent = newPhotographer.price + "€" + "/" + "jour";
+  aTag.textContent = photographerId.name;
+  img.setAttribute("src", `assets/photographers/${photographerId.portrait}`);
+  console.log(photographerId.portrait);
+
+  aTag.href = `/photographer.html?id=${photographerId.id}`;
+  h3.textContent = photographerId.city + "," + " " + photographerId.country;
+  p.textContent = photographerId.tagline;
+  span.textContent = photographerId.price + "€" + "/" + "jour";
 
   article.appendChild(aTag);
   aTag.appendChild(img);
@@ -49,25 +75,29 @@ async function displayData() {
   div.appendChild(span);
   article.appendChild(ul);
 
-  mediaPhotographer.forEach((media) => {
+  mediaPhotographer.map((media) => {
     const li = document.createElement("li");
     const img = document.createElement("img");
+
     const title = document.createElement("h2");
     const likes = document.createElement("p");
     const price = document.createElement("p");
     const heart = document.createElement("i");
-
-    img.setAttribute("src", `assets/${newPhotographer.name}/${media.image}`);
+    console.log(media);
+    img.setAttribute("src", `assets/${media.image}`);
+    img.src = `assets/${media.image}`;
+    console.log(media.image);
     console.log(img);
-    img.setAttribute("id", "photographers");
+
+
     title.textContent = media.title;
     likes.textContent = media.likes;
     price.textContent = media.price + "€";
     heart.setAttribute("class", "fas fa-heart");
 
     ul.appendChild(li);
-    console.log(ul);
     li.appendChild(img);
+    console.log();
     li.appendChild(title);
     li.appendChild(likes);
     li.appendChild(price);
@@ -79,6 +109,6 @@ async function displayData() {
 
 displayData().then((article) => {
   const main = document.querySelector("#main");
-  console.log(main);
   main.appendChild(article);
 });
+
