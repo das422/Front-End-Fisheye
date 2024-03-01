@@ -13,14 +13,21 @@ export const authOptions: AuthOptions = {
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID as string,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
-      profile(profile) {
-        return {
-          id: profile.id,
-          name: profile.name,
-          email: profile.email,
-          image: profile.picture
-        }
-      }
+      // authorization: {
+      //   params: {
+      //     prompt: "consent",
+      //     access_type: "offline",
+      //     response_type: "code"
+      //   }
+        // profile(profile) {
+        //   return {
+        //     id: profile.id,
+        //     name: profile.name,
+        //     email: profile.email,
+        //     image: profile.picture
+        //   }
+        // }
+      // }
     }),
     CredentialsProvider({
       name: 'credentials',
@@ -56,14 +63,15 @@ export const authOptions: AuthOptions = {
       }
     })
   ],
-  pages: {
-    signIn: '/signin'
-  },
-  debug: process.env.NODE_ENV === 'development',
-  session: {
-    strategy: "jwt",
-  },
-  secret: process.env.NEXTAUTH_SECRET,
+  // pages: {
+  //   signIn: '/',
+  //   signOut: '/',
+  // },
+  // debug: process.env.NODE_ENV === 'development',
+  // session: {
+  //   strategy: "jwt",
+  // },
+  // secret: process.env.NEXTAUTH_SECRET,
 }
 
 export default NextAuth(authOptions);
