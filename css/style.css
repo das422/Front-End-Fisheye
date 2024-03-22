@@ -103,14 +103,9 @@ color: #525252;
     height: 200px;
     width: 200px;
     border-radius: 50%;
-    /* transform: scale(0.8);
-     */
+
      translate: 2px 5px;
-    object-fit: cover;
-    object-position: center;
-    /* object-fit: contain; */
-    /* object-fit: cover; */
-    /* object-position: center; */
+
     cursor: pointer;
 }
 
