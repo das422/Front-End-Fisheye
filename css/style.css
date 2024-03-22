@@ -73,6 +73,7 @@ h1 {
     /* margin-inline: 0; */
     text-align: center;
     cursor: pointer;
+
 }
 
 .photographer_section article div{
@@ -112,6 +113,3 @@ color: #525252;
     cursor: pointer;
 }
 
-.photographer_section article img:hover{
-
-}
