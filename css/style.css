@@ -64,7 +64,7 @@ h1 {
     color: #D3573C;
     font-size:32px;
     display: flex;
-    flex-direction: column-reverse;
+flex-direction: column;
     text-decoration: none;
     align-items: center;
     gap: 0.8rem;
@@ -81,8 +81,9 @@ h1 {
 place-items: center;
 }
 
-.photographer_section div p{
+.photographer_section  p{
     margin-block: 0;
+    padding: 0;
     }
     
 .photographer_section div span{
