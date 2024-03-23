@@ -1,3 +1,6 @@
+
+
+
 export default class Media{
   constructor(data) {
     this.id = data.id;
@@ -11,16 +14,5 @@ export default class Media{
   }
 }
 
-export class Image extends Media {
-  constructor(data) {
-    super(data);
-    this.image = data.image;
-  }
-};
 
-export class Video extends Media {
-  constructor(data) {
-    super(data);
-    this.video = data.video;
-  }
-};
+
