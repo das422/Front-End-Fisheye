@@ -8,7 +8,7 @@ body {
 }
 main {
   margin-inline: 7rem;
-  max-width: 1440px;
+  /* max-width: 1440px; */
   margin: 0 auto;
 }
 
@@ -26,15 +26,20 @@ h1 {
   margin-right: 100px;
 }
 
-h2, h3, h4, span, p, a{
-    margin: 0;
-    padding: 0;
+h2,
+h3,
+h4,
+span,
+p,
+a {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
 }
 
 .logo {
   height: 50px;
   margin-left: 100px;
-
 }
 
 /* .photographer_section {
@@ -110,40 +115,70 @@ h2, h3, h4, span, p, a{
 }
  */
 
-
- .photographer_section{
-    display: grid;
-    gap: 2rem;
-    padding: 2rem;
-
- }
+.photographer_section {
+  display: grid;
+  gap: 2rem;
+  padding: 2rem;
+}
 
 .photographer_card {
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-height: 100%;
-    width: 100%;
-   text-decoration: none;
-    cursor: pointer;
+  display: grid;
+  /* flex-direction: column; */
+  /* place-content: center; */
+  align-items: center;
+  place-content: center;
+  justify-content: center;
+  gap: 0.2rem;
+  /* height: 100%; */
+  width: 100%; /* width: 40%; */
 }
-.photographer_card_name{
-     color: #d3573c;
-    font-size: 24px;
-    
+.photographer_card_link {
+  cursor: pointer;
+}
+
+.photographer_card_name {
+  color: #d3573c;
+  font-size: 32px;
+  text-align: center;
+}
+
+.photographer_card_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+  color: #525252;
+  font-size: 16px;
+}
+
+.photographer_card_location {
+  color: #d3573c;
+  font-size: 16px;
+}
+.photographer_card_tagline {
+  color: #525252;
+  font-size: 14px;
+  font-weight: 600;
+}
+.photographer_card_price {
+  color: #757575;
+  font-size: 16px;
 }
 
 .photographer_card_img {
-border-radius: 50%;
-aspect-ratio: 1/1;
-width: 200px;
-
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  width: 200px;
+  margin-inline: 1rem;
+  object-fit: fill;
+  object-position: center;
 }
 
- @media (min-width: 768px) {
+@media (min-width: 768px) {
   .photographer_section {
-    grid-template-columns: repeat( 3, 1fr);
-  
-  }};
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    align-items: center;
+    justify-content: center;
+  }
+}

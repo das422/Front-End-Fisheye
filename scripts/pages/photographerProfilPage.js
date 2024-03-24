@@ -1,5 +1,6 @@
 import Api from '../Api/Api.js';
 import MediaPhotographer from '../templates/MediaPhotographer.js';
+import PhotographerHeader from '../templates/PhotographerHeader.js';
 import Photographer from '../classes/Photographers.js';
 import MediaFactory from '../factory/MediaFactory.js';
 
@@ -15,7 +16,8 @@ export const getPhotographer = async () => {
 
 const displayPhotographerPage = async () => {
   const { photographer, medias } = await getPhotographer();
-
+  const headerTemplate = new PhotographerHeader(photographer);
+  headerTemplate.createPhotographerHeader();
   const mediasTemplate = new MediaPhotographer(photographer, medias);
   mediasTemplate.createMediaPhotographer();
 
