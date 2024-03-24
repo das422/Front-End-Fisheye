@@ -1,112 +1,105 @@
 @import url("photographer.css");
 
 body {
-    font-family: "DM Sans", sans-serif;
-    margin: 0;
-    padding: 0;
+  font-family: "DM Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-main{
-    margin-inline: 7rem;
-    /* max-width: 1440px; */
-    margin: 0 auto;
-
+main {
+  margin-inline: 7rem;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    height: 90px;
-    
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 90px;
+  padding-top: 2rem;
 }
 
 h1 {
-    color: #901C1C;
-    margin-right: 100px;
+  color: #901c1c;
+  margin-right: 100px;
 }
 
+h2, h3, h4, span, p, a{
+    margin: 0;
+    padding: 0;
+}
 
 .logo {
-    height: 50px;
-    margin-left: 100px;
-}
-
-.photographer_section {
-    display: grid;
-    grid-template-columns:repeat( 3, 1fr);
-    column-gap: 5rem;
-    row-gap: 2rem;
-    margin-top: 100px;
-    align-content:center;
-    margin-inline: 7rem;
-    background: lime;
-    justify-content: center;
-    place-items: center;
-    width: 100%;
-    height: 100%;
-    margin-inline:auto;
-    max-width: 1440px;
-
-    
-
-    /* max-width: max-content; */
-}
-
-.photographer_section article {
-
-    background: lightblue;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(autofill, minmax(200px, 1fr));
-    justify-content: center;
-    align-items: center;
-    place-content: center;
-
-
+  height: 50px;
+  margin-left: 100px;
 
 }
 
-.photographer_section article a {
-    color: #D3573C;
-    font-size:32px;
-    display: flex;
-flex-direction: column;
-    text-decoration: none;
-    align-items: center;
-    gap: 0.8rem;
-    padding: 0;
-    margin: 0.8rem;
-    /* margin-inline: 0; */
-    text-align: center;
-    cursor: pointer;
+/* .photographer_section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 5rem;
+  row-gap: 2rem;
+  margin-top: 100px;
+  align-content: center;
+  margin-inline: 7rem;
+  background: lime;
+  justify-content: center;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  margin-inline: auto;
+  max-width: 1440px;
+} */
 
-}
+/* .photographer_section article {
+  background: lightblue;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(autofill, minmax(200px, 1fr));
+  justify-content: center;
+  align-items: center;
+  place-content: center;
+} */
 
-.photographer_section article div{
-    display: grid;
-place-items: center;
-}
+/* .photographer_section article a {
+  color: #d3573c;
+  font-size: 32px;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0;
+  margin: 0.8rem;
+  text-align: center;
+  cursor: pointer;
+} */
 
-.photographer_section  p{
-    margin-block: 0;
-    padding: 0;
-    }
-    
-.photographer_section div span{
-color: #525252;
-}
+/* .photographer_section article div {
+  display: grid;
+  place-items: center;
+} */
 
-.photographer_section article h3 {
-    color: #D3573C;
-    font-size: 1rem;
-    
-    padding: 0;
-   margin: 0;
+/* .photographer_section p {
+  margin-block: 0;
+  padding: 0;
+} */
 
-}
+/* .photographer_section div span {
+  color: #525252;
+} */
 
-.photographer_section article img {
+/* .photographer_section article h3 {
+  color: #d3573c;
+  font-size: 1rem;
+  padding: 0;
+  margin: 0;
+} */
+
+/* .photographer_section article img {
     height: 200px;
     width: 200px;
     border-radius: 50%;
@@ -115,4 +108,42 @@ color: #525252;
 
     cursor: pointer;
 }
+ */
 
+
+ .photographer_section{
+    display: grid;
+    gap: 2rem;
+    padding: 2rem;
+
+ }
+
+.photographer_card {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+height: 100%;
+    width: 100%;
+   text-decoration: none;
+    cursor: pointer;
+}
+.photographer_card_name{
+     color: #d3573c;
+    font-size: 24px;
+    
+}
+
+.photographer_card_img {
+border-radius: 50%;
+aspect-ratio: 1/1;
+width: 200px;
+
+}
+
+ @media (min-width: 768px) {
+  .photographer_section {
+    grid-template-columns: repeat( 3, 1fr);
+  
+  }};

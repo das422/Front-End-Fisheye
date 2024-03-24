@@ -32,6 +32,6 @@ export default class MediaPhotographer {
     `;
 
     photographerContent.innerHTML = MediaCard;
-    return photographerContent;
+    return MediaCard;
   };
 };
