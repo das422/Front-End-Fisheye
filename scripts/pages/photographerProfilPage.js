@@ -3,6 +3,8 @@ import MediaPhotographer from '../templates/MediaPhotographer.js';
 import PhotographerHeader from '../templates/PhotographerHeader.js';
 import Photographer from '../classes/Photographers.js';
 import MediaFactory from '../factory/MediaFactory.js';
+import showlightbox  from '../utils/lightbox.js';
+
 
 const photographerApi = new Api("./data/photographers.json");
 const photographerId = new URLSearchParams(window.location.search).get("id");
@@ -21,6 +23,8 @@ const displayPhotographerPage = async () => {
   const mediasTemplate = new MediaPhotographer(photographer, medias);
   mediasTemplate.createMediaPhotographer();
 
+
+  showlightbox(mediasTemplate);
 };
 
 

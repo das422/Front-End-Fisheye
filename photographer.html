@@ -22,21 +22,18 @@
           Contactez-moi
         </button>
       </div>
-
-      <section class="main_content-medias">
-      <!-- <div>
-                    <select id="dropdown" class="dropdown"onchange="selectOption()">
+      <div class="dropdown-container">
+        <span class="dropdown__label">Trier par</span>
+        <select id="dropdown" class="dropdown" onchange="selectOption()">
           <option value="popularite">Popularité</option>
           <option value="date">Date</option>
           <option value="titre">Titre</option>
-          </select>
-      </div> -->
-
-         </section> 
+        </select>
+      </div>
+      <section class="main_content-medias"></section>
     </main>
-     <span class="likedisplay"></span>
+    <span class="likedisplay"></span>
 
-  
     <div id="contact_modal">
       <div class="modal">
         <header>
@@ -52,7 +49,15 @@
         </form>
       </div>
     </div>
-    
+    <!-- lightbox -->
+    <div class="lightbox-container" aria-modal="true" role="dialog">
+      <div class="lightbox" aria-label="display media full size">
+        <button class="btn_lightbox lightbox_close" aria-label="close dialog">X</button>
+        <button class=" btn_lightbox lightbox_next" aria-label="next media">></button>
+        <button class="btn_lightbox lightbox_prev" aria-label="previous media"><</button>
+        <figure class="lightbox_media" role="media" aria-label="media"></figure>
+      </div>
+    </div>
     <script
       src="/scripts/pages/photographerProfilPage.js"
       type="module"
