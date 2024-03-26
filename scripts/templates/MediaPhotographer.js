@@ -22,7 +22,7 @@ export default class MediaPhotographer {
       </div>
       <figcaption class="legend">
       <h2>${media.title}</h2>
-          <div role="group" aria-label="Like button and number of likes">
+          <div  class="media_infos" role="group" aria-label="Like button and number of likes">
               <span class="nbLike">${media.likes}</span> 
               <button class="btn_like" type="button" aria-label="Like" data-id="${media.id}">
                   <span class="fas fa-heart" aria-hidden="true"></span>
