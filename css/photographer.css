@@ -271,8 +271,9 @@ form input {
   align-items: center;
   position: fixed;
    background: #d3573c;
-     width: 20vw;
-  height:30px;
+      width: 30%;
+      max-width: 20vw;
+  height:50px;
   bottom: 0;
   right: 0;
   z-index: 1000;
