@@ -3,11 +3,13 @@ import { getPhotographer } from "../pages/photographerProfilPage.js";
 export const TotalLikes = async () => {
   const { medias } = await getPhotographer();
   const btnLike = document.querySelectorAll('.btn_like');
-  const nbLike = document.querySelectorAll('.nbLike');
+  const allLike = document.querySelectorAll('.photographer_likes');
 
   const incrementLike = () => {
     const likeAll = medias.reduce((acc, media) => acc + media.likes, 0);
-    nbLike.textContent = `${likeAll}`;
+    allLike.forEach(like => {
+      like.textContent = `${likeAll}`;
+    });
   };
 
 
@@ -21,11 +23,12 @@ export const TotalLikes = async () => {
       !btn.classList.contains('liked') ? media.likes++ : media.likes--;
       btn.classList.toggle('liked');
 
-      const likeAll = btn.previousElementSibling;
-      likeAll.textContent = `${media.likes}`;
+      const allLike = btn.previousElementSibling;
+      allLike.textContent = `${media.likes}`;
 
  
       incrementLike();
     });
   });
 };
+

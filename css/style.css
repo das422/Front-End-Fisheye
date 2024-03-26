@@ -142,6 +142,9 @@ a {
 }
 .photographer_card_link {
   cursor: pointer;
+  object-fit: cover;
+  object-position: center;
+  text-align: center;
 }
 
 .photographer_card_name {
@@ -175,11 +178,11 @@ a {
 }
 
 .photographer_card_img {
-  border-radius: 50%;
-  aspect-ratio: 1/1;
-  width: 200px;
-  margin-inline: 1rem;
-  object-fit: fill;
+  border-radius: 100vw;
+  aspect-ratio: 1;
+  width: 150px;
+  /* margin-inline: 1rem; */
+  object-fit: cover;
   object-position: center;
 }
 
