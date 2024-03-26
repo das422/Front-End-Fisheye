@@ -1,8 +1,17 @@
-#main {
+.wrapper{
+
+  max-width: 1440px;
+  box-sizing: border-box;
+  margin:0 auto;
+
+}
+
+
+/* #main {
   position: relative;
   padding: 2rem;
   margin: 0 5rem;
-}
+} */
 
 img {
   width: 100%;
