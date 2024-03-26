@@ -1,24 +1,10 @@
-.wrapper{
-
+.wrapper {
   max-width: 1440px;
   box-sizing: border-box;
-  margin:0 auto;
-
+  margin: 0 auto;
 }
-
-
-/* #main {
+#main {
   position: relative;
-  padding: 2rem;
-  margin: 0 5rem;
-} */
-
-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  box-sizing: border-box;
 }
 
 #contact_modal {
@@ -202,6 +188,9 @@ form input {
   width: 100%;
   height: 100%;
   border-radius: 0.25rem;
+  object-fit: cover;
+  /* object-position: center; */
+  box-sizing: border-box;
 }
 
 .legend {
@@ -252,7 +241,7 @@ form input {
 }
 
 /* display like and rate */
-.legend{
+.legend {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -262,22 +251,21 @@ form input {
   padding-block: 1rem;
   margin-inline: 1rem;
   /* background: rgb(27, 92, 167); */
-
 }
 
-.like-container{
+.like-container {
   display: flex;
   justify-content: center;
   align-items: center;
   position: fixed;
-   background: #d3573c;
-      width: 30%;
-      max-width: 20vw;
-  height:50px;
+  background: #d3573c;
+  width: 30%;
+  max-width: 20vw;
+  height: 50px;
   bottom: 0;
   right: 0;
   z-index: 1000;
-    border-radius: 1rem 1rem 0 0;
+  border-radius: 1rem 1rem 0 0;
 }
 
 .likedisplay {
@@ -285,7 +273,7 @@ form input {
   /* justify-content: center; */
   align-items: center;
 
-  position:absolute;
+  position: absolute;
   /* bottom: 0;
   right: 0; */
   color: black;
@@ -299,7 +287,7 @@ form input {
   margin-inline: 1rem;
 } */
 
-.photographer_likes{
+.photographer_likes {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -317,7 +305,6 @@ form input {
 .fas {
   width: 32px;
   scale: 1.2;
-  
 }
 
 /* lightbox */
@@ -325,62 +312,42 @@ form input {
 .lightbox-container {
   display: none;
   position: absolute;
-  top: 0;
-  background: rgba(0, 0, 0, 0.8);
   justify-content: center;
   align-items: center;
+  top: 50px;
+
+  background: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  max-width: 1000px;
+  height: 80vh;
+  max-height: 900px;
+  margin: 0 auto;
+  border-radius: 0.25rem;
+  /* padding-block: 2rem; */
   /* padding: 2rem; */
 }
 .lightbox {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  /* background: white; */
-  padding: 2rem;
   border-radius: 5px;
-  /* width:100%; */
-  height: 100%;
-}
-
-.lightbox_media {
-  display: flex;
-  flex-direction: column;
-
-  width: 100%;
-  height: 100%;
-}
-.lightbox_media a {
-  display: flex;
-  flex-direction: column;
-
-  width: 100%;
-  height: 100%;
-}
-
-.lightbox_media a {
+  object-fit: cover;
+  object-position: center;
   width: 100%;
   height: 100%;
 }
 
 .btn_lightbox {
   background-color: transparent;
-  color: black;
+  color: #d3573c;
   padding: 0.5rem;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   position: absolute;
   aspect-ratio: 1/1;
-  /* width: 100px; */
 }
 
 .lightbox_close {
   top: 0;
   right: 0;
-  color: black;
   padding: 0.5rem;
   border: none;
 
@@ -390,24 +357,33 @@ form input {
 }
 
 .lightbox_prev {
-  position: fixed;
-
   left: 0;
-  top: 50%;
+  top: 0;
   font-weight: 600;
-  font-size: 150px;
-
+  font-size: 50px;
+  height: 100%;
   width: 150px;
   z-index: 800;
 }
 
 .lightbox_next {
-  position: fixed;
   right: 0;
-  top: 50%;
+  top: 0;
   font-weight: 600;
-  font-size: 150px;
-
+  font-size: 50px;
+  height: 100%;
   width: 150px;
   z-index: 800;
+}
+
+.lightbox_media {
+  display: flex;
+  flex-direction: column;
+}
+.lightbox_media img,
+.lightbox_media video {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 70vh;
 }

@@ -10,13 +10,11 @@ export default (medias) => {
 
   const photographer = medias.photographer;
   const mediasList = medias.medias;
-
   let activeIndex = 0;
 
   lightboxSource.map((media) => {
     media.addEventListener("click", () => {
       const mediaId = media.dataset.media;
-
       const mediaIndex = mediasList.findIndex((media) => media.id == mediaId);
       activeIndex = mediaIndex;
       lightboxContainer.style.display = "flex";
@@ -24,15 +22,14 @@ export default (medias) => {
       lightboxT();
     });
   });
-  const  lightboxT = () => {
+  const lightboxT = () => {
     const activeMedia = mediasList[activeIndex];
-
-  lightboxMedia.innerHTML = `
-    ${activeMedia.image
-        ? `
-    <img src="./assets/medias/${photographer.name}/${activeMedia.image}" alt="${activeMedia.alt}">`
-        : `<video controls> aria-label="${activeMedia.alt}"><source src="./assets/medias/${photographer.name}/${activeMedia.video}" type="video/mp4"></video>`}
-    
+    lightboxMedia.innerHTML = `
+    ${
+      activeMedia.image
+        ? `<img src="./assets/medias/${photographer.name}/${activeMedia.image}" alt="${activeMedia.alt}">`
+        : `<video controls> aria-label="${activeMedia.alt}"><source src="./assets/medias/${photographer.name}/${activeMedia.video}" type="video/mp4"></video>`
+    }
       <figcaption>${activeMedia.title}</figcaption>
       `;
     console.log(activeMedia);

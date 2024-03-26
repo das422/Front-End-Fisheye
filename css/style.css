@@ -7,12 +7,10 @@ body {
   box-sizing: border-box;
 }
 
-.wrapper{
-
+.wrapper {
   max-width: 1440px;
   box-sizing: border-box;
-  margin:0 auto;
-
+  margin: 0 auto;
 }
 main {
   margin-inline: 7rem;
@@ -26,7 +24,7 @@ header {
   justify-content: space-between;
   align-items: center;
   height: 90px;
-  padding-top: 2rem;
+  /* padding-top: 2rem; */
 }
 
 h1 {
@@ -46,8 +44,10 @@ a {
 }
 
 .logo {
-  height: 50px;
+  
+  height: 60px;
   margin-left: 100px;
+  /* background: red; */
 }
 
 /* .photographer_section {
