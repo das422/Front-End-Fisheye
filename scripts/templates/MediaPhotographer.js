@@ -35,9 +35,11 @@ export default class MediaPhotographer {
       .join("")}
     <div class="like-container">
         <div class="likedisplay">
-    <span class="photographer_likes"></span>
+        <div class="like-count" aria-label="Total number of likes">
+        <span class="photographer_likes"></span>
     <span class="fas fa-heart" aria-hidden="true"></span>
-    <span>${this.photographer.price}€ / jour</span>
+        </div>
+    <span class ="like-count">${this.photographer.price}€ / jour</span>
     </div>
     </div>
 

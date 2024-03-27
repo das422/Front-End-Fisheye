@@ -31,7 +31,6 @@ const displayPhotographerPage = async () => {
   mediasTemplate.createMediaPhotographer();
 
   TotalLikes();
-  // validationForm();
   modalDisplay();
   showlightbox(mediasTemplate);
   mediaFilter(mediasTemplate);

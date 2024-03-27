@@ -2,24 +2,18 @@
   max-width: 1440px;
   box-sizing: border-box;
   margin: 0 auto;
-
 }
-/* #main {
-  position: relative;
-} */
 
 #contact_modal {
   display: none;
   z-index: 200;
   position: absolute;
   inset: 0;
-
 }
 
 #photograph-header {
   background-color: #fafafa;
   height: 300px;
-  /* margin: 0 100px; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -60,7 +54,6 @@
   aspect-ratio: 1;
   width: 10rem;
   height: 10rem;
-
   margin-inline: 1rem;
   object-fit: cover;
   object-position: center;
@@ -79,10 +72,15 @@
   cursor: pointer;
 }
 
-.modal {
+.contact_button:hover,
+.contact_button:focus-visible {
+  background-color: #d3573c;
+  color: black;
+}
 
+.modal {
   border-radius: 5px;
-  background-color: #db8876;
+  background-color: #d3576c;
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -134,27 +132,20 @@ form input {
   border-radius: 5px;
 }
 
-.error{
+.error {
   display: none;
   color: red;
   font-weight: 600;
 }
-/* header section */
 
 /* media section */
 .main_content-medias {
   margin: 0 auto;
-  /* background: lightgreen; */
   display: grid;
   grid-template-columns: repeat(autofill, minmax(1fr, 1fr));
   place-content: center;
-  /* padding-top: 12rem; */
   gap: 1rem;
 }
-
-/* .gallery {
-
-} */
 
 @media screen and (max-width: 768px) {
   #photograph-header {
@@ -181,16 +172,9 @@ form input {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* gap: 1rem; */
   flex-direction: column;
   min-width: 100%;
-  /* background: lightblue; */
 }
-
-/* .gallery_card__media > a {
-  width: 100%;
-
-} */
 
 .gallery_preview {
   aspect-ratio: 1/1;
@@ -198,7 +182,6 @@ form input {
   height: 100%;
   border-radius: 0.25rem;
   object-fit: cover;
-  /* object-position: center; */
   box-sizing: border-box;
 }
 
@@ -208,8 +191,7 @@ form input {
   gap: 2rem;
   min-width: 80%;
   margin: 0.8rem;
-  color:#901C1C;
-
+  color: #901c1c;
 }
 
 /* dropdown */
@@ -221,9 +203,7 @@ form input {
   display: inline-block;
   font-size: 20px;
   font-weight: bold;
-
   padding: 0.8rem;
-
   border: none;
   background-color: #901c1c;
   border-radius: 5px;
@@ -256,11 +236,9 @@ form input {
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
-  /* max-width: 100%; */
   margin: 0;
   padding-block: 1rem;
   margin-inline: 1rem;
-  /* background: rgb(27, 92, 167); */
 }
 
 .like-container {
@@ -275,27 +253,26 @@ form input {
   bottom: 0;
   right: 0;
   z-index: 1000;
-  border-radius: 1rem 1rem 0 0;
+  border-radius: 0.25rem 0.25rem 0 0;
 }
 
 .likedisplay {
   display: flex;
-  /* justify-content: center; */
+  justify-content: space-between;
   align-items: center;
-
+  gap: 1rem;
+  width: 100%;
   position: absolute;
-  /* bottom: 0;
-  right: 0; */
   color: black;
   text-align: center;
   z-index: 1000;
 }
-
-/* .nblike{
-  color: white;
-  font-size: 1.5rem;
-  margin-inline: 1rem;
-} */
+.like-count {
+  display: flex;
+  margin: 1rem;
+  justify-content: center;
+  align-items: center;
+}
 
 .photographer_likes {
   display: flex;
@@ -315,7 +292,7 @@ form input {
 .fas {
   width: 32px;
   scale: 1.2;
-  color:#901C1C;
+  color: #901c1c;
 }
 
 /* lightbox */
@@ -324,9 +301,9 @@ form input {
   display: none;
   position: absolute;
   place-items: center;
-  /* justify-content: center;
+  justify-content: center;
   align-items: center;
-  align-content: center; */
+  align-content: center;
   top: 50px;
   background: white;
   width: 100%;
@@ -334,19 +311,15 @@ form input {
   height: 100vh;
   max-height: 900px;
   box-sizing: border-box;
-  /* max-height: 900px; */
+  max-height: 900px;
   margin: 0 auto;
-  
   border-radius: 0.25rem;
-  /* padding-block: 2rem; */
-
 }
+
 .lightbox {
   border-radius: 5px;
   object-fit: cover;
   object-position: center;
-  /* width: 100%;
-  height: 100%; */
 }
 
 .btn_lightbox {
@@ -403,6 +376,6 @@ form input {
   height: 70vh;
 }
 
-figcaption{
-  color:#901C1C;
+figcaption {
+  color: #901c1c;
 }
