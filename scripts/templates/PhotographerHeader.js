@@ -5,8 +5,6 @@ export default class PhotographerHeader {
 
   createPhotographerHeader() { 
     const header = document.querySelector('#photograph-header');
-    const contactForm = document.querySelector('#contact_modal');
-    contactForm.textContent = `${ this.photographer.name }`;
 
     const photographerAbout = `
     <div class="photograph-header__info">
@@ -14,10 +12,10 @@ export default class PhotographerHeader {
     <p class="photograph-header__location">${this.photographer.city}, ${this.photographer.country}</p>
     <p class="photograph-header__tagline">${this.photographer.tagline}</p>
     </div>
-    <button class=" btn contact_button" type="button" aria-label="contact form modal">Contactez moi</button>
+    <button class=" btn contact_button  type="button" aria-label="contact form modal">Contactez moi</button>
     <img class="photograph-header__avatar" src="./assets/photographers/${this.photographer.portrait}" alt="Photo de ${this.photographer.name}">
     `;
-    
+
     header.innerHTML = photographerAbout;
     return photographerAbout
   };

@@ -1,9 +1,10 @@
-function displayModal() {
-    const modal = document.getElementById("contact_modal");
-	modal.style.display = "block";
-}
-
-function closeModal() {
-    const modal = document.getElementById("contact_modal");
-    modal.style.display = "none";
-}
+export const modalDisplay = () => {
+    const contactBtn = document.querySelector(".contact_button");
+    const contactModal = document.querySelector("#contact_modal");
+    const closeModal = document.querySelector(".close");
+    contactBtn.addEventListener("click", () => {
+        contactModal.style.display = "flex";
+        closeModal.focus();
+    });
+    closeModal.addEventListener("click", () => contactModal.style.display = "none");
+};

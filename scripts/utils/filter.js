@@ -9,7 +9,6 @@ export const mediaFilter = mediasTemplate => {
   const filteredOptions = options
     .map(option => option.value)
     .filter(value => value !== optionSelected.value);
-console.log(filteredOptions);
   const filter = document.querySelector("#dropdown");
   filter.addEventListener("change", () => {
     const selected = filter.value;
