@@ -5,6 +5,8 @@ export default class PhotographerHeader {
 
   createPhotographerHeader() { 
     const header = document.querySelector('#photograph-header');
+    const contactForm = document.querySelector('h2');
+    contactForm.textContent = `Contactez moi ${this.photographer.name}`;
 
     const photographerAbout = `
     <div class="photograph-header__info">

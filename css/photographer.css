@@ -131,6 +131,15 @@ form input {
   border: none;
   border-radius: 5px;
 }
+.formHeader{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 2rem;
+  
+
+}
 
 .error {
   display: none;
