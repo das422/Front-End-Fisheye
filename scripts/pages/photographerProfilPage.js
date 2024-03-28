@@ -6,7 +6,7 @@ import MediaFactory from "../factory/MediaFactory.js";
 import showlightbox from "../utils/lightbox.js";
 import { TotalLikes } from "../utils/likeCount.js";
 import { mediaFilter } from "../utils/filter.js";
-import  { modalDisplay } from "../utils/contactForm.js";
+import  { formValidation, modalDisplay } from "../utils/contactForm.js";
 
 const photographerApi = new Api("./data/photographers.json");
 const photographerId = new URLSearchParams(window.location.search).get("id");
@@ -32,6 +32,7 @@ const displayPhotographerPage = async () => {
 
   TotalLikes();
   modalDisplay();
+  formValidation();
   showlightbox(mediasTemplate);
   mediaFilter(mediasTemplate);
   

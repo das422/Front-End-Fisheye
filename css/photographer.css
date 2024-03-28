@@ -80,7 +80,7 @@
 
 .modal {
   border-radius: 5px;
-  background-color: #d3576c;
+  background-color: #D3573C;
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -97,12 +97,8 @@
 
 .modal header img {
   cursor: pointer;
-}
+  background-color: transparent;
 
-.modal header h2 {
-  font-size: 64px;
-  font-weight: normal;
-  text-align: center;
 }
 
 form {
@@ -132,12 +128,26 @@ form input {
   border-radius: 5px;
 }
 .formHeader{
+  font-size: 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   gap: 2rem;
   
+
+}
+
+.submit{
+  background-color: #901c1c;
+  color: white;
+  font-size: 24px;
+  padding: 11px;
+  width: 170px;
+  height: 70px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 
 }
 
