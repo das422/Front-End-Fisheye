@@ -6,32 +6,35 @@ export const modalDisplay = () => {
         contactModal.style.display = "flex";
         closeModal.focus();
     });
-    closeModal.addEventListener("click", () => contactModal.style.display = "none");
+    closeModal.addEventListener(
+        "click",
+        () => (contactModal.style.display = "none")
+    );
 };
 
-
 export const formValidation = () => {
-
     const form = document.querySelector("#contact_modal");
-    const firstName = document.querySelector(".formInput[name='firstname']");
-    const lastName = document.querySelector(".formInput[name='lastname']");
-    const email = document.querySelector(".formInput[name='email']");
-    const message = document.querySelector(".formInput[name='message']");
-    const error = document.querySelector(".error");
-    const btnSubmit = document.querySelector(".submit");
-
+    const firstName = document.querySelector("#firstname");
+    const lastName = document.querySelector("#lastname");
+    const email = document.querySelector("#email");
+    const message = document.querySelector("#text");
+    const contactModal = document.querySelector("#contact_modal");
 
     form.addEventListener("submit", (e) => {
         e.preventDefault();
-        checkInputs();
-       
-        
+        if (
+            firstName.value === "" ||
+      lastName.value === "" ||
+      email.value === "" ||
+      message.value === ""
+        ) {
+            alert("Veuillez remplir tout les champs");
+        } else {
+            console.log("firstName", ":" + "", firstName.value);
+            console.log("lastName", ":" + "", lastName.value);
+            console.log("email", ":" + "", email.value);
+            console.log("message", ":" + "", message.value);
+            contactModal.style.display = "none";
+        }
     });
-
-    const checkInputs = () => {
-
-
-    };
-
 };
-

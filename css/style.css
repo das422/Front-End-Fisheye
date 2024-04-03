@@ -42,7 +42,6 @@ a {
 }
 
 .logo {
-  
   height: 60px;
   margin-left: 100px;
 }
@@ -59,7 +58,7 @@ a {
   place-content: center;
   justify-content: center;
   gap: 0.2rem;
-  width: 100%; 
+  width: 100%;
 }
 .photographer_card_link {
   cursor: pointer;

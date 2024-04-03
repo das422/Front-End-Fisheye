@@ -28,12 +28,27 @@ export default (medias) => {
     ${
       activeMedia.image
         ? `<img src="./assets/medias/${photographer.name}/${activeMedia.image}" alt="${activeMedia.alt}">`
-        : `<video controls> aria-label="${activeMedia.alt}"><source src="./assets/medias/${photographer.name}/${activeMedia.video}" type="video/mp4"></video>`
+        : `<video controls alt="${activeMedia.alt}"> ><source src="./assets/medias/${photographer.name}/${activeMedia.video}" type="video/mp4"></video>`
     }
       <figcaption>${activeMedia.title}</figcaption>
       `;
-    console.log(activeMedia);
   };
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      lightboxContainer.style.display = "none";
+    }
+
+    if (e.key === "ArrowRight") {
+      Next();
+    }
+    if (e.key === "ArrowLeft") {
+      Prev();
+    }
+  });
+
+  btnClose.addEventListener("click", () => Close());
+  btnNext.addEventListener("click", () => Next());
+  btnPrev.addEventListener("click", () => Prev());
 
   const Close = () => {
     lightboxContainer.style.display = "none";
@@ -51,7 +66,7 @@ export default (medias) => {
     activeIndex--;
     if (activeIndex < 0) activeIndex = mediasList.length - 1;
     lightboxT();
-    showActiveBtn(lightboxPrev);
+    showActiveBtn(btnPrev);
   };
 
   const showActiveBtn = (btn) => {
@@ -60,13 +75,14 @@ export default (medias) => {
       btn.classList.remove("active");
     }, 100);
 
-    document.addEventListener("keyup", (e) => {
-      if (e.key === "ArrowRight") lightboxT();
-      if (e.key === "ArrowLeft") lightboxPrev();
-      if (e.key === "Escape") lightboxClose();
-    });
+    //   document.addEventListener("keyup", (e) => {
+    //     if (e.key === "ArrowRight") lightboxT();
+    //     if (e.key === "ArrowLeft") lightboxPrev();
+    //     if (e.key === "Escape") lightboxClose();
+    //   });
+    // };
+    // btnClose.addEventListener("click", () => Close());
+    // btnNext.addEventListener("click", () => Next());
+    // btnPrev.addEventListener("click", () => Prev());
   };
-  btnClose.addEventListener("click", () => Close());
-  btnNext.addEventListener("click", () => Next());
-  btnPrev.addEventListener("click", () => Prev());
 };

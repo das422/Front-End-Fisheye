@@ -1,15 +1,15 @@
 export default class PhotographerCard {
-  constructor(photographer) {
-    this.photographer = photographer;
-  }
+    constructor(photographer) {
+        this.photographer = photographer;
+    }
 
-  createPhotographerCard() {
-    const article = document.createElement("article");
-    article.classList.add("photographer_card");
-    const photographerCard = `
+    createPhotographerCard() {
+        const article = document.createElement("article");
+        article.classList.add("photographer_card");
+        const photographerCard = `
     <a href="photographer.html?id=${this.photographer.id} "class="photographer_card_link"
       aria-label="Cliquez pour voir le profil de ${this.photographer.name}">
-<img src="assets/photographers/${this.photographer.portrait}" alt="" class="photographer_card_img">
+<img src="assets/photographers/${this.photographer.portrait}" alt="portrait of ${this.photographer.name}" class="photographer_card_img">
 <h2 class="photographer_card_name">${this.photographer.name}</h2>
 
 </a>
@@ -22,7 +22,7 @@ export default class PhotographerCard {
      
     `;
 
-    article.innerHTML = photographerCard;
-    return article;
-  }
+        article.innerHTML = photographerCard;
+        return article;
+    }
 }

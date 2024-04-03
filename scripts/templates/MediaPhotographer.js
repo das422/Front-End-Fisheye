@@ -1,20 +1,20 @@
 export default class MediaPhotographer {
-  constructor(photographer, medias) {
-    this.photographer = photographer;
-    this.medias = medias;
-  }
+    constructor(photographer, medias) {
+        this.photographer = photographer;
+        this.medias = medias;
+    }
 
-  createMediaPhotographer() {
-    const photographerContent = document.querySelector(".main_content-medias");
-    const MediaCard = `<section class="gallery">
+    createMediaPhotographer() {
+        const photographerContent = document.querySelector(".main_content-medias");
+        const MediaCard = `<section class="gallery">
     ${this.medias
-      .map((media) => {
-        const mediaType = media.image
-          ? `<img class="gallery_preview" src="./assets/medias/${this.photographer.name}/${media.image}" alt="${media.alt}">`
-          : `<video class="gallery_preview" aria-label="${media.alt}">
+        .map((media) => {
+            const mediaType = media.image
+                ? `<img class="gallery_preview" src="./assets/medias/${this.photographer.name}/${media.image}" alt="${media.alt}">`
+                : `<video class="gallery_preview" aria-label="${media.alt}">
         <source src="./assets/medias/${this.photographer.name}/${media.video}" type="video/mp4">
     </video>`;
-        return `<div class="gallery_card">
+            return `<div class="gallery_card">
       <div class="gallery_card__media">
             <a href="#" data-media=${media.id} role="link" aria-label="Display media full screen">
       <figure>${mediaType}</figure>
@@ -31,8 +31,8 @@ export default class MediaPhotographer {
   </figcaption>
   </div>
   `;
-      })
-      .join("")}
+        })
+        .join("")}
     <div class="like-container">
         <div class="likedisplay">
         <div class="like-count" aria-label="Total number of likes">
@@ -45,7 +45,7 @@ export default class MediaPhotographer {
 
     `;
 
-    photographerContent.innerHTML = MediaCard;
-    return MediaCard;
-  }
+        photographerContent.innerHTML = MediaCard;
+        return MediaCard;
+    }
 }

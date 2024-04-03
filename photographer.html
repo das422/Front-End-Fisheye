@@ -23,17 +23,21 @@
       </header>
       <main id="main">
         <div id="photograph-header">
-          <button class="contact_button" onclick="displayModal()">
+          <button class="contact_button"">
             Contactez-moi
           </button>
         </div>
         <div class="dropdown-container">
           <span class="dropdown__label">Trier par</span>
-          <select id="dropdown" class="dropdown">
-            <option  value="popularite" class="active">Popularité</option>
-            <option value="date">Date</option>
-            <option value="titre">Titre</option>
+          <label for="dropdown" name="dropdown"aria-label="dropwdown-menu">
+            <select id="dropdown" class="dropdown">
+              <option  value="popularite" class="active">Popularité</option>
+              <option value="date">Date</option>
+             <option value="titre">Titre</option>
           </select>
+
+          </label>
+         
         </div>
         <section class="main_content-medias"></section>
       </main>
@@ -44,30 +48,28 @@
           <div class="formHeader">
             <h2>Contactez-moi</h2>
             <button class="close" aria-label="close modal">
-              <img src="assets/icons/close.svg" />
+              <img src="assets/icons/close.svg" alt="icon close modal" />
             </button>
-          </div>
-
-            
+          </div>  
           <form name="form" id="form" novalidate  >
             <div class="formData">
-              <label for="firstname">Prénom<span aria-hidden="true"></span>*</label>
+              <label for="firstname">Prénom<span aria-hidden="true">*</span></label>
               <input  class="formInput" aria-labelledby="firstname-label" type="text" id="firstname" name="name" required/>
               <span class="error" aria-live="polite"></span>
             </div>           
              <div class="formData">
-              <label for="lastname">Nom<span aria-hidden="true"></span>*</label>
+              <label for="lastname">Nom<span aria-hidden="true">*</span></label>
               <input  class="formInput" aria-labelledby="lastname-label" type="text" id="lastname" name="name" required/>
               <span class="error" aria-live="polite"></span>
             </div>
             <div class="formData">
-              <label for="email">Email<span aria-hidden="true"></span>*</label>
+              <label for="email">Email<span aria-hidden="true">*</span></label>
               <input  class="formInput" aria-labelledby="email-label" type="email" id="email" name="email" required/>
               <span class="error" aria-live="polite"></span>
             </div>
             <div class="formData">
-              <label for=message">Message<span aria-hidden="true"></span>*</label>
-              <input  class="formInput" aria-labelledby="message-label" type="textarea" id="message" name="message"rows="5" minlength="20" required/>
+              <label for="text">Message<span aria-hidden="true">*</span></label>
+              <input  class="formInput" aria-labelledby="text-label" type="text" id="text" name="text" required/>
               <span class="error" aria-live="polite"></span>
             </div>
             <button class="submit btn" type="submit" aria-label="Send">Envoyer</button>
